@@ -30,9 +30,9 @@ public class BookService {
     }
 
     // get book by title
-    // public Book getbookByTileService(String title) {
-    // return bookRepository.findBookByTitle(title);
-    // }
+    public Book getbookByTileService(String name) {
+        return bookRepository.findBookByName(name);
+    }
     // update book
 
     public Book updateBookService(Book book) {
@@ -49,5 +49,10 @@ public class BookService {
         String deleted = "delete one with id";
         bookRepository.deleteById(id);
         return deleted;
+    }
+
+    // getall books
+    public List<Book> getAllBook() {
+        return bookRepository.findAll();
     }
 }
